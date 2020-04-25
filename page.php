@@ -27,13 +27,14 @@ if( isset( $aData['sName'] ) ){ // displaying pages and subpages content
   
   if( $aData['iSubpagesShow'] > 0 )
     echo $oPage->listSubpages( $aData['iPage'], $aData['iSubpagesShow'] ); // displaying subpages
-
+   
   if( isset( $aData['iProducts'] ) ){
     $oProduct = Products::getInstance( );
     $_SESSION['sLastProductsPageUrl'] = $_SERVER['REQUEST_URI'];
     $_SERVER['REQUEST_URI'] = str_replace( '&', '&amp;', $_SERVER['REQUEST_URI'] );
     echo $oProduct->listProducts( $aData['iPage'], isset( $bViewAll ) ? 999 : null ); // displaying products
   }
+  
 }
 else{
   echo '<div class="message" id="error"><h2>'.$lang['Data_not_found'].'</h2></div>'; // displaying 404 error

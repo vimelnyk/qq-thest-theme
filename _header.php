@@ -11,10 +11,12 @@ if( !defined( 'CUSTOMER_PAGE' ) )
   <meta name="Description" content="<?php echo $sDescription; ?>" />
 
   <link rel="stylesheet" href="<?php echo $config['dir_skin'].$config['style']; ?>" />
+  <link rel="stylesheet" href="<?php echo $config['dir_skin']; ?>assets/prod/main.min.css" />
 
   <script src="<?php echo $config['dir_plugins']; ?>jquery.min.js"></script>
   <script src="<?php echo $config['dir_core']; ?>common.js"></script>
   <script src="<?php echo $config['dir_libraries']; ?>quick.box.js"></script>
+  <script src="<?php echo $config['dir_skin']; ?>assets/prod/main.min.js"></script>
   <script>
     var aCF = {
       'sWarning' : '<?php echo $lang['cf_no_word']; ?>',
@@ -35,41 +37,73 @@ if( !defined( 'CUSTOMER_PAGE' ) )
 </ul>
 
 <div id="container">
-  <div id="header">
+
+  <header id="header">
+
     <div id="head1"><?php // first top menu starts here ?>
       <div class="container">
         <?php echo $oPage->throwMenu( 1, $iContent, 0 ); // content of top menu first ?>
       </div>
     </div>
+
     <div id="head2"><?php // banner, logo and slogan starts here ?>
       <div class="container">
-        <div id="logo"><?php // logo and slogan ?>
-          <div id="title"><a href="./" tabindex="4"><?php echo $config['logo']; ?></a></div>
-          <div id="slogan"><?php echo $config['slogan']; ?></div>
-        </div>
-      </div>
-    </div>
-    <div id="head3"><?php // second top menu starts here ?>
-      <div class="container">
-        <?php echo $oPage->throwMenu( 2, $iContent, 0 ); // content of top menu second ?>
-      </div>
-    </div>
-  </div>
-  <div id="body"<?php if( isset( $config['this_is_order_page'] ) ) echo ' class="order"'; elseif( isset( $config['this_is_basket_page'] ) ) echo ' class="basket-page"'; ?>>
-    <div class="container">
-      <div id="column"><?php 
-        if( !isset( $config['this_is_order_page'] ) ){ // left column with left menu ?><?php
+        <div class="row">
+          <div class="col">
+            
+                    <div id="logo"><?php // logo and slogan ?>
+                      <div id="title"><a href="./"><?php echo $config['logo']; ?></a></div>
+                      <div id="slogan"><?php echo $config['slogan']; ?></div>
+                    </div>
+
+          </div>
+          <div class="col">
+<?php 
+        if( !isset( $config['this_is_order_page'] ) ){ // left column with left menu ?>
+        <?php
           if( isset( $config['page_search'] ) && is_numeric( $config['page_search'] ) && isset( $oPage->aPages[$config['page_search']] ) ){ // search form starts here ?>
             <a id="search" tabindex="-1"></a>
-            <form method="post" action="<?php echo $oPage->aPages[$config['page_search']]['sLinkName']; ?>" id="searchForm">
+            <form method="post" action="<?php echo $oPage->aPages[$config['page_search']]['sLinkName']; ?>" id="searchForm" class="search-form">
               <fieldset>
                 <legend><?php echo $lang['Search_form']; ?></legend>
-                <span><label for="searchField"><?php echo $lang['search']; ?></label><input type="text" size="15" name="sPhrase" id="searchField" value="<?php echo $sPhrase; ?>" class="input" maxlength="100" accesskey="1" /></span>
-                <em><input type="submit" value="<?php echo $lang['search']; ?> &raquo;" class="submit" /></em>
+                <div><label for="searchField"><?php echo $lang['search']; ?></label><input type="text" name="sPhrase" id="searchField" value="<?php echo $sPhrase; ?>" class="input" accesskey="1" />
+                <input type="submit" value="<?php echo $lang['search']; ?> &raquo;" class="submit" />
+          </div>
               </fieldset>
             </form><?php
-          }  // search form ends here ?><?php 
-          echo $oPage->throwMenu( 3, $iContent, 1, true ); // content of left menu ?><?php 
-        }?>       
+          }  // search form ends here ?>
+         <?php 
+        }?> 
+          </div>
+        </div>
+      
+        
       </div>
-      <div id="content">
+    </div>
+
+    <div id="head3"><?php // second top menu starts here ?>
+      <nav class="container navigation">
+              <?php 
+        if( !isset( $config['this_is_order_page'] ) ){ // left column with left menu ?>
+       
+          <?php 
+          echo $oPage->throwMenu( 3, $iContent, 1, true ); // content of left menu ?><?php 
+        }?>
+      </div>
+    </div>
+
+    </header>
+
+  <main id="body"<?php if( isset( $config['this_is_order_page'] ) ) echo ' class="order"'; elseif( isset( $config['this_is_basket_page'] ) ) echo ' class="basket-page"'; ?>>
+    <div class="container">
+      <div class="row">
+
+      <aside id="column" class="col-md-3 sidebar">
+      <?php 
+        if( !isset( $config['this_is_order_page'] ) ){ // left column with left menu ?>
+       
+          <?php 
+          echo $oPage->throwMenu( 3, $iContent, 1, true ); // content of left menu ?><?php 
+        }?>
+      </aside>
+      <div id="content" class="col-md-9">
