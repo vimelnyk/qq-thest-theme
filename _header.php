@@ -40,40 +40,54 @@ if( !defined( 'CUSTOMER_PAGE' ) )
 
   <header id="header">
 
-    <div id="head1"><?php // first top menu starts here ?>
+    <div id="head1" class="d-flex align-items-center justify-content-between"><?php // first top menu starts here ?>
       <div class="container">
-        <?php echo $oPage->throwMenu( 1, $iContent, 0 ); // content of top menu first ?>
+        <div class="row align-items-center justify-content-between">
+          <span>
+            +380 (44) 444 44 44
+          </span>
+          <span>
+            mail@mail.com
+          </span>
+        </div>
+        
       </div>
     </div>
 
     <div id="head2"><?php // banner, logo and slogan starts here ?>
       <div class="container">
-        <div class="row">
-          <div class="col">
+        <div class="row justify-content-between align-items-center">
+
+          <div class="col-4">
             
-                    <div id="logo"><?php // logo and slogan ?>
-                      <div id="title"><a href="./"><?php echo $config['logo']; ?></a></div>
-                      <div id="slogan"><?php echo $config['slogan']; ?></div>
+                    <div id="logo" class="logo"><?php // logo and slogan ?>
+                      <div id="title" class="logo__title"><a href="./"><?php echo $config['logo']; ?></a></div>
+                      <div id="slogan" class="logo__slogan"><?php echo $config['slogan']; ?></div>
                     </div>
 
           </div>
-          <div class="col">
+          <div class="col-6">
 <?php 
         if( !isset( $config['this_is_order_page'] ) ){ // left column with left menu ?>
         <?php
           if( isset( $config['page_search'] ) && is_numeric( $config['page_search'] ) && isset( $oPage->aPages[$config['page_search']] ) ){ // search form starts here ?>
             <a id="search" tabindex="-1"></a>
             <form method="post" action="<?php echo $oPage->aPages[$config['page_search']]['sLinkName']; ?>" id="searchForm" class="search-form">
-              <fieldset>
+              <fieldset class="search-form__fieldset">
                 <legend><?php echo $lang['Search_form']; ?></legend>
-                <div><label for="searchField"><?php echo $lang['search']; ?></label><input type="text" name="sPhrase" id="searchField" value="<?php echo $sPhrase; ?>" class="input" accesskey="1" />
-                <input type="submit" value="<?php echo $lang['search']; ?> &raquo;" class="submit" />
-          </div>
+                <label for="searchField"><?php echo $lang['search']; ?></label><input type="text" name="sPhrase" id="searchField" value="<?php echo $sPhrase; ?>" class="search-form__input" accesskey="1" />
+                <input type="submit" value="<?php echo $lang['search']; ?> &raquo;" class="search-form__submit" />
+          
               </fieldset>
             </form><?php
           }  // search form ends here ?>
          <?php 
         }?> 
+          </div>
+          <div class="col-2">
+          <div class="cart">
+          <?php echo $oPage->throwMenu( 1, $iContent, 0 ); // content of top menu first ?>
+          </div>
           </div>
         </div>
       

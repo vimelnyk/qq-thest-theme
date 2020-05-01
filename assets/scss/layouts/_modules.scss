@@ -37,7 +37,53 @@
 }
 
 .search-form {
-    border: 1px solid $green;
+    &__fieldset {
+        position: relative;
+        border: 1px solid $green;
+        height: 36px;
+        border-radius: 20px;
+
+        &::after {
+            @extend %fontello;
+            content: '\e801';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: -1;
+            color: $green;
+            font-size: 1.2em;
+        }
+    }
+
+    &__input {
+        @extend %fullAbs;
+        padding-left: 20px;
+        padding-right: 60px;
+        border: 0;
+        background-color: transparent;
+        appearance: none;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    &__submit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border: 0;
+        width: 40px;
+        border-radius: 20px;
+        text-indent: -9999px;
+        background-color: transparent;
+        @extend %fontello;
+        content: '\e801';
+    }
 
 
     label,

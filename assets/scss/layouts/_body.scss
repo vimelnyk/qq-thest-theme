@@ -15,6 +15,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    color: $grey;
 }
 
 
@@ -32,4 +33,9 @@ body {
 
 .backgrounded {
     @extend %backgrounded;
+}
+
+#body {
+    padding-top: 2em;
+    padding-bottom: 2em;
 }

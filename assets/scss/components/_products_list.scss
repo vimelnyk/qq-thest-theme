@@ -10,19 +10,21 @@
     flex-wrap: wrap;
 }
 
-
-
-
 #products .list li {
-    padding: 20px 10px;
+    padding: 20px;
     text-align: center;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
-}
+    display: flex;
+    flex-direction: column;
 
+    &:nth-child(3n+1),
+    &:nth-child(3n+2) {
+        border-right: 1px solid $light-grey;
+    }
 
-#products li .photo {
-    margin-top: 4px;
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
 }
 
 #products li h2 {
@@ -79,12 +81,11 @@
 
 #products li .price,
 #products li .noPrice {
-    margin: 5px 0 5px 0;
+    margin: 1em 0;
     background-color: inherit;
     color: $green;
     font-weight: bold;
     text-decoration: none;
-    text-shadow: 2px 2px 3px #ddd;
 }
 
 #products li .price em {
@@ -109,24 +110,24 @@
 }
 
 #products li .basket {
-    width: 150px;
-    margin: 10px auto 0;
-    padding-left: 3px;
-    font-size: 0.917em;
-    font-weight: bold;
+    margin-top: 1em;
+    ;
+    margin-bottom: 1em;
+    ;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $green;
+        color: white;
+        padding: 1em;
+        font-weight: bold;
+        text-decoration: none;
+
+    }
 }
 
-#products li .basket a {
-    display: block;
-    padding: 5px 32px 8px 7px;
-    color: #fff;   
-    text-decoration: none;
-    text-shadow: 1px 1px #630d2f;
-}
-
-#products li .basket a:hover {
-    text-shadow: 0px 0px 5px #e9c0d1;
-}
 
 #products .pages {
     float: right;
@@ -157,6 +158,11 @@
     border-right: 1px solid #666;
 }
 
+#products li .photo a:hover img {
+    transform: scale(1.01, 1.01);
+
+}
+
 #products .pages .title {
     padding-left: 8px;
     border: none;
@@ -166,6 +172,7 @@
     clear: none;
     width: auto;
 }
+
 
 #products .sort {
     float: left;

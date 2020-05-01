@@ -10,15 +10,25 @@ if( !defined( 'CUSTOMER_PAGE' ) )
          </div> 
        <!--.row -->
 
-  <footer id="foot"><?php // footer starts here ?>
-  <div>
-     <?php echo $oPage->throwMenu( 2, $iContent, 0 ); // content of top menu second ?>
-  </div>
+  <footer id="foot" class="footer"><?php // footer starts here ?>
+  <div class="footer__navigation background-green">      
     <div class="container">
-
-      <div id="copy"><?php echo $config['foot_info']; ?></div><!-- copyrights here -->
-      <!-- <div class="foot" id="powered"><a href="./"><img src="<?php echo $config['dir_skin']; ?>img/quick.cart.png" alt="Script logo" width="187" height="15" /></a></div> -->
+      <div class="row">
+     <?php echo $oPage->throwMenu( 2, $iContent, 0 ); // content of top menu second ?>
+      </div>
     </div>
+  </div>
+  <div class="footer__copyright">
+    <div class="container">
+      <div class="row">
+        <div id="copy"><?php echo $config['foot_info']; ?></div><!-- copyrights here -->
+        <!-- <div class="foot" id="powered"><a href="./"><img src="<?php echo $config['dir_skin']; ?>img/quick.cart.png" alt="Script logo" width="187" height="15" /></a></div> -->
+
+      </div>
+
+    </div>
+
+  </div>
   </footer>
   
 </main>

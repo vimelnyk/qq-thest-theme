@@ -1,0 +1,77 @@
+#head1 {
+    background-color: $light-grey;
+    height: 40px;
+}
+
+#head2 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.logo{
+    &__title{
+        font-size: 2em;
+    }
+}
+
+
+
+#menu1 ul {
+
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+
+    li.lBasket {
+        height: 34px;
+        border-radius: 20px;
+        display: inline-block;
+        background-color: $orange;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: white;
+            text-decoration: none;
+
+            &:before {
+                @extend %fontello;
+                content: '\e800';
+            }
+        }
+
+        span {
+            position: absolute;
+            right: -6px;
+            top: -6px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: $red;
+            overflow: hidden;
+            text-indent: -99999px;
+
+            strong {
+                @extend %fullAbs;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-indent: 0;
+                color: white;
+                font-weight: 500;
+                font-size: 0.8em;
+            }
+
+        }
+    }
+}
