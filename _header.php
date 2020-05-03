@@ -12,8 +12,8 @@ if( !defined( 'CUSTOMER_PAGE' ) )
     <title><?php echo $sTitle.$config['title']; ?></title>
     <meta name="Description" content="<?php echo $sDescription; ?>" />
 
-    <link rel="stylesheet" href="<?php echo $config['dir_skin'].$config['style']; ?>" />
     <link rel="stylesheet" href="<?php echo $config['dir_skin']; ?>assets/prod/main.min.css" />
+    <link rel="stylesheet" href="<?php echo $config['dir_skin'].$config['style']; ?>" />
 
     <script src="<?php echo $config['dir_plugins']; ?>jquery.min.js"></script>
     <script src="<?php echo $config['dir_core']; ?>common.js"></script>
