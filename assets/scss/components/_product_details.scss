@@ -10,7 +10,7 @@
     background: inherit;
     color: $green;
     font-size: 2.25em;
-    font-weight: normal;   
+    font-weight: normal;
 }
 
 #product div.breadcrumb {
@@ -36,76 +36,7 @@
     padding: 0 5px;
 }
 
-#product #box {
-    float: right;
-    width: 250px;
-    margin: 5px 0 10px 10px;
-    padding: 3px 0 10px;
-    border-top: 2px solid #d4d4d4;
-    border-bottom: 2px solid #d4d4d4;
-    background: url('img/body.png');
-    text-align: center;
-    -webkit-box-shadow: 0 0 15px rgba(48, 47, 47, .3);
-    box-shadow: 0 0 15px rgba(48, 47, 47, .3);
-}
 
-#product #box form {
-    font-weight: bold;
-}
-
-#product #box #price,
-#product #box #noPrice {
-    padding: 7px 0;
-    border-bottom: 1px solid #bebebe;
-    background-color: transparent;
-    color: #666;
-    font-size: 1.417em;
-    text-align: center;
-    text-shadow: 2px 2px 3px #ddd;
-}
-
-#product #box #noPrice {
-    color: $green;
-}
-
-#product #box #price em {
-    font-style: normal;
-}
-
-#product #box #price strong {
-    padding: 0 6px;
-    font-size: 1.176em;
-    color: $green;
-    font-weight: bold;
-}
-
-#product #box #available {
-    padding: 8px 2px 0;
-    background-color: transparent;
-    color: #666;
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
-#product #box #addBasket {
-    padding: 10px 0 5px;
-}
-
-#product #box #addBasket .submit {
-    width: 176px;
-    padding: 5px 25px 8px 5px;
-    border: 0;
-    background: url('img/button_cart.png') no-repeat right bottom;
-    background-color: inherit;
-    color: #fff;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-shadow: 1px 1px #630d2f;
-}
-
-#product #box #addBasket .submit:hover {
-    text-shadow: 0px 0px 5px #e9c0d1;
-}
 
 #product div.content {
     clear: left;
@@ -128,4 +59,121 @@
 
 #product div.content p {
     padding-bottom: 10px;
+}
+
+#product #box {
+    #noPrice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $grey;
+        color: white;
+        padding: 1em;
+        font-weight: bold;
+        cursor: not-allowed;
+    }
+
+    #price {
+        margin-bottom: 1em;
+
+        em {
+            padding-right: 2px;
+            font-style: normal;
+        }
+
+        strong {
+            color: $green;
+            padding-right: 2px;
+            font-size: 1.1rem;
+        }
+    }
+
+    #available {
+        margin-bottom: 1em;
+    }
+
+    #addBasket {
+        fieldset {
+            border: none;
+        }
+
+        input.submit {
+            border: none;
+            appearance: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $green;
+            color: white;
+            padding: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            @include transitions(all, 0.3s, ease, 0s);
+
+            &:hover {
+                transform: scale(1.01, 1.01);
+                background-color: transparentize($green, 0.1);
+            }
+
+        }
+    }
+}
+
+
+/* IMAGES STYLES */
+#content .imagesList {
+    list-style: none;
+}
+
+#content .imagesList li {
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+#content .imagesList li div {
+    text-align: center;
+}
+
+
+
+
+#imagesList1 {
+    float: left;
+    margin: 9px 20px 0 0;
+}
+
+#imagesList2 {
+    clear: right;
+    float: right;
+    margin: 8px 0 0 15px;
+}
+
+#content .imagePreview div {
+    margin: 5px 0 10px;
+    text-align: center;
+}
+
+#imagesListPreview {
+    float: left;
+    margin: 9px 20px 0 0;
+
+    @include respondTo(screenmdmax) {
+        margin-right: 0;
+    }
+}
+
+* html #imagesListPreview {
+    margin-top: -5px;
+}
+
+#content .imagesList#imagesListPreview li {
+    margin-bottom: 3px;
+}
+
+#content .imagesList#imagesListPreview li img {
+    border-width: 2px;
+}
+
+#content .imagesList#imagesListPreview li img:hover {
+    border-width: 2px;
 }

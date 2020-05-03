@@ -1,48 +1,147 @@
-
-
-.header-desktop{
-    &__head{
-        background-color: $light-grey;  
-        ul{
-            text-align: center;     
+.header-desktop {
+    &__head {
+        ul {
+            text-align: center;
             letter-spacing: normal;
             display: block;
-            li{
+
+            li {
                 display: inline-block;
-                a{
+
+                a {
                     display: inline-block;
                     padding: 0.8em;
                     text-decoration: none;
                     font-size: 0.8em;
                     font-weight: 600;
-                    &::before{
-                        content:
+
+                    &::before {
+                        @extend %fontello;
+                        content: '\e803';
                     }
                 }
             }
-        }      
-    }
-    
-    &__body{
-        padding-top: 1em;
-        padding-bottom: 1em;
-        
-    }
-
-    .logo{
-        &__title{
-            font-size: 2em;
         }
     }
+
+    &__body {
+        padding-top: 1em;
+        padding-bottom: 1em;
+
+    }
+
+}
+
+
+.logo {
+    &__title {
+        font-size: 2em;
+
+        @include respondTo(screenmdmax) {
+            font-size: 1em;
+        }
+
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+
+            @include respondTo(screenmdmax) {
+                text-align: center;
+                color:white;
+            }
+        }
+
+        i {
+            display: inline-block;
+
+            &::before {
+                @extend %fontello;
+                content: '\e802';
+                display: inline-block;
+                color: $orange;
+            }
+
+        }
+    }
+     &__slogan{
+         @include respondTo(screenmdmax) {
+             display: none;
+         }
+     }
 }
 
 .header-mobile {
+    &__head {
+        @extend .header-desktop__head;
+
+        ul li a {
+            padding: 0.8em 0.4em;
+            font-size: 0.7em;
+        }
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__search {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+}
+
+.open-mobile-menu {
+    @include buttons(white, white, $green, lighten($green, 2%));
+    @include square(40px);
+    border: 0;
+    appearance: none;
+    position: relative;
+
+    span {
+        display: inline-block;
+        position: absolute;
+        height: 0;
+        left: 10px;
+        right: 10px;
+        border: 0.5px solid white;
+        border-radius: 1px;
+        background-color: white;
+    }
+
+    span {
+
+        &:nth-child(1) {
+            bottom: calc(50% + 5.5px);
+        }
+
+        &:nth-child(2) {
+            top: calc(50% - 0.5px);
+
+        }
+
+        &:nth-child(2) {
+            top: calc(50% + 5.5px);
+        }
+
+    }
 
 }
 
+.overlay{
+    display: none;
+    @extend %fullAbs;
+    z-index:18;
+    background-color:transparentize(black, 0.5);
+    &.is-open{
+        display: block;
+    }
+}
 
 
-#menu1 ul {
+.mini-basket-logo ul {
 
     list-style: none;
     display: flex;
@@ -50,13 +149,19 @@
 
     li.lBasket {
         height: 34px;
-        border-radius: 20px;
+
         display: inline-block;
         background-color: $orange;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 20px;
+
+        @include respondTo(screenmdmax) {
+            margin-right: 15px;
+            border-radius: 100%;
+        }
 
         a {
             display: flex;
@@ -69,9 +174,19 @@
             color: white;
             text-decoration: none;
 
+            @include respondTo(screenmdmax) {
+                font-size: 0;
+                padding: 0;
+                @include square(34px);
+            }
+
             &:before {
                 @extend %fontello;
                 content: '\e800';
+
+                @include respondTo(screenmdmax) {
+                    font-size: 16px;
+                }
             }
         }
 

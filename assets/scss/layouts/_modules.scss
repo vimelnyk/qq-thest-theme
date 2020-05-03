@@ -1,11 +1,14 @@
 
 
 .search-form {
+    position: relative;
+    z-index: 0;
     &__fieldset {
         position: relative;
         border: 1px solid $green;
         height: 36px;
         border-radius: 20px;
+        background-color: white;
 
         &::after {
             @extend %fontello;
@@ -18,7 +21,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: -1;
+            z-index: 0;
             color: $green;
             font-size: 1.2em;
         }
@@ -47,6 +50,7 @@
         background-color: transparent;
         @extend %fontello;
         content: '\e801';
+        z-index: 2;
     }
 
 
@@ -54,6 +58,5 @@
     legend {
         display: none;
     }
-
 
 }

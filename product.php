@@ -15,12 +15,16 @@ if( isset( $aData['sName'] ) ){ // displaying product content ?>
   echo '<h1>'.$aData['sName'].'</h1>'; // displaying product name
 
   if( isset( $aData['sPages'] ) )
-    echo '<div class="breadcrumb">'.$aData['sPages'].'</div>'; // displaying pages tree (breadcrumb)
+    echo '<div class="breadcrumb">'.$aData['sPages'].'</div>'; // displaying pages tree (breadcrumb) ?>
 
-  if( isset( $config['image_preview_size'] ) && is_numeric( $config['image_preview_size'] ) )
+<?php  if( isset( $config['image_preview_size'] ) && is_numeric( $config['image_preview_size'] ) )
     echo $oFile->listPreviewImages( $aData['iProduct'], 1 ); // displaying images with type: left
   else
     echo $oFile->listImagesByTypes( $aData['iProduct'], 1 ); // displaying images with type: left
+
+    ?>
+    
+    <?php 
 
   if( isset( $aData['mPrice'] ) || isset( $aData['sAvailable'] ) ){ // displaying box with price, basket and availability - START
     echo '<div id="box">';

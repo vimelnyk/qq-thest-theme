@@ -35,24 +35,46 @@ function catchClickOnButton(parent) {
     console.log(elements)
    for (let index = 0; index < elements.length; index++) {
        const element = elements[index];
-       
-       console.log(element)
-       element.addEventListener('click', handleMenuOpen)
+      
+       element.addEventListener('click', handleSubenuOpen)
+       element.addEventListener('dblclick', handleMenuOpen)
        
    }
 }
 
-function handleMenuOpen(e){
+function handleSubenuOpen(e){
     
-    e.preventDefault();
-    let target = getEventTarget(e);
-    console.log(target)
-    console.log(target.parentNode.classList)
-
-        if (target.parentNode.classList.contains('has-submenu')) {
+    let target = getEventTarget(e);    
+    if (target.parentNode.classList.contains('has-submenu')) {
+            e.preventDefault();
             target.parentNode.classList.toggle('is-open');
-        }
+    } else {
+        closeMobileMenuHandler();
+    }
     
+}
+
+function handleMenuOpen(e){
+    let target = getEventTarget(e);
+    let link = target.getAttribute('href');
+    window.location.href = link;
+    closeMobileMenuHandler();
+}
+
+
+
+function openMobileMenuHandler() {
+    document.getElementsByTagName('body')[0].classList.add('is-fixed');
+    mobileMenu.classList.add('is-open');
+    overlay.classList.add('is-open');
+
+}
+
+function closeMobileMenuHandler() {
+    document.getElementsByTagName('body')[0].classList.remove('is-fixed');
+    mobileMenu.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+
 }
 
 function getEventTarget(e) {
@@ -64,5 +86,9 @@ document.addEventListener("DOMContentLoaded", function() {
     fixPriceAtProductsList();
     fixMenuSubmenu();
     catchClickOnButton('#menu3');
-    //handleMenuOpen();
+    openMobileMenu.addEventListener('click', openMobileMenuHandler);
+    closeMobileMenu.addEventListener('click', closeMobileMenuHandler);
+    overlay.addEventListener('click', closeMobileMenuHandler);
+
+   
 });

@@ -14,8 +14,11 @@ body {
     font-family: $fontFamily;
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
+    flex-direction: column;   
     color: $grey;
+    &.is-fixed {
+        overflow: hidden;
+    }
 }
 
 

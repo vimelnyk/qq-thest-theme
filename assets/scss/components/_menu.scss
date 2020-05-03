@@ -1,9 +1,6 @@
-.sidebar {
+.sidebar,
+.mobile-menu {
     .main-menu {
-        box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .1);
-        margin-right: 20px;
-
-
         ul {
             padding: 10px 0;
             list-style: none;
@@ -26,13 +23,27 @@
 
         }
 
+        .sub1 {
+            a {
+                font-weight: 400;
+                font-size: 0.9em;
+                padding-left: 20px;
+            }
+        }
+
     }
+}
+
+.sidebar {
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .1);
+    margin-right: 20px;
 }
 
 .navigation {
     display: flex;
 
     ul {
+        background-color: $green;
         list-style: none;
         display: flex;
         justify-content: flex-start;
@@ -40,6 +51,7 @@
 
         li {
             display: flex;
+            position: relative;
 
             a {
                 display: flex;
@@ -51,18 +63,45 @@
 
         }
     }
+
+    .sub1 {
+        position: absolute;
+        top: 100%;
+        z-index: 10;
+        background-color: $green;
+        min-width: 100%;
+        max-width: 160px;
+    }
+}
+
+.close-mobile-menu {
+    @include closer(20px, $green, 10px);
+    @include square(20px);
+    border: none;
+    appearance: none;
+    background-color: white;
+    top: 10px;
 }
 
 .main-menu {
+
     .type {
         display: none;
     }
 
     li.has-submenu {
         &>a {
+            position: relative;
+            padding-right: 1.8em;
+
             &:after {
+                position: absolute;
+                top: calc(50% - 0.4em);
+                right: 0.4em;
+                @extend %fontello;
+                content: '\f004';
                 display: inline-block;
-                content: '+';
+                font-size: 0.8em;
                 @include transitions;
             }
         }
@@ -70,7 +109,7 @@
         &.is-open {
             &>a {
                 &:after {
-                    content: '-';
+                    content: '\f005';
                     transform: rotate(360deg);
                 }
             }
@@ -93,4 +132,20 @@
         }
     }
 
+}
+
+.mobile-menu {
+    padding-top: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 100%;
+    display: none;
+    background-color: white;
+
+    &.is-open {
+        display: block;
+        z-index: 20;
+    }
 }

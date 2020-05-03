@@ -21,9 +21,10 @@ if( !defined( 'CUSTOMER_PAGE' ) )
   <div class="footer__copyright">
     <div class="container">
       <div class="row">
-        <div id="copy"><?php echo $config['foot_info']; ?></div><!-- copyrights here -->
-        <!-- <div class="foot" id="powered"><a href="./"><img src="<?php echo $config['dir_skin']; ?>img/quick.cart.png" alt="Script logo" width="187" height="15" /></a></div> -->
+        <div class="col">
+          <small id="copy"><?php echo $config['foot_info']; ?></small> 
 
+        </div>
       </div>
 
     </div>

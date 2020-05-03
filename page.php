@@ -4,11 +4,11 @@ if( !defined( 'CUSTOMER_PAGE' ) )
 
 require_once DIR_SKIN.'_header.php'; // include design of header
 ?>
-<div id="page">
+<div id="page" class="page">
 <?php
 if( isset( $aData['sName'] ) ){ // displaying pages and subpages content
 
-  echo '<h1>'.$aData['sName'].'</h1>'; // displaying page name
+  echo '<div class="page__header"><h1>'.$aData['sName'].'</h1></div>'; // displaying page name
 
   if( isset( $aData['sPagesTree'] ) )
     echo '<div class="breadcrumb">'.$aData['sPagesTree'].'</div>'; // displaying page tree (breadcrumb)
@@ -18,7 +18,7 @@ if( isset( $aData['sName'] ) ){ // displaying pages and subpages content
   echo $oFile->listImagesByTypes( $aData['iPage'], 2 ); // displaying images with type: right
   
   if( isset( $aData['sDescriptionFull'] ) )
-    echo '<div class="content" id="pageDescription">'.$aData['sDescriptionFull'].'</div>'; // full description
+    echo '<div class="content page__content" id="pageDescription">'.$aData['sDescriptionFull'].'</div>'; // full description
 
   if( isset( $aData['sPages'] ) )
     echo '<div class="pages">'.$lang['Pages'].': <ul>'.$aData['sPages'].'</ul></div>'; // full description pagination

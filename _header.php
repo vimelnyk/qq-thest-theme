@@ -32,6 +32,11 @@ if( !defined( 'CUSTOMER_PAGE' ) )
     <?php displayAlternateTranslations( ); ?>
 </head>
 <body<?php if( isset( $aData['iPage'] ) && is_numeric( $aData['iPage'] ) ) echo ' id="page'.$aData['iPage'].'"'; elseif( isset( $aData['iProduct'] ) && is_numeric( $aData['iProduct'] ) ) echo ' id="product'.$aData['iProduct'].'"'; ?>>
+  <div id="overlay" class="overlay"></div>
+  <div id="mobileMenu" class="mobile-menu d-lg-none">
+    <button id="closeMobileMenu" type="button" class="close-mobile-menu"></button>
+    <?php include 'tpl/_main_menu.php';?>
+  </div>
     <ul id="skiplinks">
         <li><a href="#menu2" tabindex="1"><?php echo $lang['Skip_to_main_menu']; ?></a></li>
         <li><a href="#content" tabindex="2"><?php echo $lang['Skip_to_content']; ?></a></li>
@@ -43,12 +48,33 @@ if( !defined( 'CUSTOMER_PAGE' ) )
 
     <div id="container">
       <header class="header-mobile d-lg-none">
-hghgh
+        <div class="header-mobile__head">
+            <?php include 'tpl/_phones_list.php';?>
+        </div>
+        <div class="header-mobile__main background-green">
+          <button id="openMobileMenu" type="button" class="open-mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <?php include 'tpl/_logo.php';?>
+          <?php include 'tpl/_mini-basket.php';?>
+        </div>
+        <div class="header-mobile__search background-light-grey">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <?php include 'tpl/_search.php';?> 
+              </div>
+            </div>
+          </div>
+        </div>
+
       </header>
 
       <header id="header" class="header-desktop d-none d-lg-block">
 
-            <div id="head1" class="header-desktop__head">
+            <div id="head1" class="header-desktop__head background-light-grey">
                 <?php ?>
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
@@ -68,9 +94,7 @@ hghgh
                           <?php include 'tpl/_search.php';?>                           
                         </div>
                         <div class="col-2">
-                            <div class="cart">
-                                <?php echo $oPage->throwMenu( 1, $iContent, 0 ); ?>
-                            </div>
+                          <?php include 'tpl/_mini-basket.php';?>
                         </div>
                     </div>
 
