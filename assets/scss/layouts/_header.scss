@@ -1,17 +1,43 @@
-#head1 {
-    background-color: $light-grey;
-    height: 40px;
-}
 
-#head2 {
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
 
-.logo{
-    &__title{
-        font-size: 2em;
+.header-desktop{
+    &__head{
+        background-color: $light-grey;  
+        ul{
+            text-align: center;     
+            letter-spacing: normal;
+            display: block;
+            li{
+                display: inline-block;
+                a{
+                    display: inline-block;
+                    padding: 0.8em;
+                    text-decoration: none;
+                    font-size: 0.8em;
+                    font-weight: 600;
+                    &::before{
+                        content:
+                    }
+                }
+            }
+        }      
     }
+    
+    &__body{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        
+    }
+
+    .logo{
+        &__title{
+            font-size: 2em;
+        }
+    }
+}
+
+.header-mobile {
+
 }
 
 

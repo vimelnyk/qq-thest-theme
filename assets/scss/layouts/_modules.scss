@@ -1,40 +1,4 @@
-.navigation {
-    display: flex;
 
-
-    .type {
-        display: none;
-    }
-
-    display: flex;
-
-
-
-
-    ul {
-        list-style: none;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        li {
-            display: flex;
-
-            a {
-                display: flex;
-                padding: 20px;
-                font-weight: bold;
-                color: white;
-                text-decoration: none;
-
-                &+ul {
-                    display: none;
-                }
-            }
-
-        }
-    }
-}
 
 .search-form {
     &__fieldset {

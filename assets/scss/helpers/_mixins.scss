@@ -150,9 +150,7 @@
     }
 }
 
-@mixin fontSize($templateFont){
-    font-size: #{100%*$templateFont/15px};
-}
+
 
 @mixin square($w){
     width:$w;

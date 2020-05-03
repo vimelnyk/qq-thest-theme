@@ -1,0 +1,131 @@
+#product {
+    display: block;
+    text-align: left;
+}
+
+
+/* IE 6 hack */
+#product h1 {
+    padding: 5px 0 5px;
+    background: inherit;
+    color: $green;
+    font-size: 2.25em;
+    font-weight: normal;   
+}
+
+#product div.breadcrumb {
+    margin: 0 0 10px;
+    padding: 2px 0 7px;
+    border-bottom: 1px solid #bebebe;
+    font-weight: normal;
+    font-size: 0.917em;
+}
+
+#product div.breadcrumb,
+#product div.breadcrumb a {
+    background: inherit;
+    color: #666;
+}
+
+#product div.breadcrumb a:hover {
+    background-color: inherit;
+    color: $green;
+}
+
+#product div.breadcrumb em {
+    padding: 0 5px;
+}
+
+#product #box {
+    float: right;
+    width: 250px;
+    margin: 5px 0 10px 10px;
+    padding: 3px 0 10px;
+    border-top: 2px solid #d4d4d4;
+    border-bottom: 2px solid #d4d4d4;
+    background: url('img/body.png');
+    text-align: center;
+    -webkit-box-shadow: 0 0 15px rgba(48, 47, 47, .3);
+    box-shadow: 0 0 15px rgba(48, 47, 47, .3);
+}
+
+#product #box form {
+    font-weight: bold;
+}
+
+#product #box #price,
+#product #box #noPrice {
+    padding: 7px 0;
+    border-bottom: 1px solid #bebebe;
+    background-color: transparent;
+    color: #666;
+    font-size: 1.417em;
+    text-align: center;
+    text-shadow: 2px 2px 3px #ddd;
+}
+
+#product #box #noPrice {
+    color: $green;
+}
+
+#product #box #price em {
+    font-style: normal;
+}
+
+#product #box #price strong {
+    padding: 0 6px;
+    font-size: 1.176em;
+    color: $green;
+    font-weight: bold;
+}
+
+#product #box #available {
+    padding: 8px 2px 0;
+    background-color: transparent;
+    color: #666;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+#product #box #addBasket {
+    padding: 10px 0 5px;
+}
+
+#product #box #addBasket .submit {
+    width: 176px;
+    padding: 5px 25px 8px 5px;
+    border: 0;
+    background: url('img/button_cart.png') no-repeat right bottom;
+    background-color: inherit;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 1px 1px #630d2f;
+}
+
+#product #box #addBasket .submit:hover {
+    text-shadow: 0px 0px 5px #e9c0d1;
+}
+
+#product div.content {
+    clear: left;
+    padding: 10px 0 10px;
+    font-size: 1.083em;
+    line-height: 1.5em;
+}
+
+#product div.content ul,
+#product div.content ol {
+    margin: 5px 0 0 30px;
+    padding: 0;
+}
+
+#product div.content li {
+    margin: 8px 0;
+    padding: 0;
+    border-left: 0;
+}
+
+#product div.content p {
+    padding-bottom: 10px;
+}
