@@ -21,12 +21,9 @@ if( !defined( 'CUSTOMER_PAGE' ) )
     <script src="<?php echo $config['dir_skin']; ?>assets/prod/main.min.js"></script>
     <script>
     var aCF = {
-        'sWarning': '<?php echo $lang['
-        cf_no_word ']; ?>',
-        'sEmail': '<?php echo $lang['
-        cf_mail ']; ?>',
-        'sInt': '<?php echo $lang['
-        cf_wrong_value ']; ?>'
+        'sWarning': '<?php echo $lang['cf_no_word']; ?>',
+        'sEmail': '<?php echo $lang['cf_mail']; ?>',
+        'sInt': '<?php echo $lang['cf_wrong_value']; ?>'
     };
     </script>
     <?php displayAlternateTranslations( ); ?>
@@ -97,8 +94,6 @@ if( !defined( 'CUSTOMER_PAGE' ) )
                           <?php include 'tpl/_mini-basket.php';?>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
@@ -116,7 +111,7 @@ if( !defined( 'CUSTOMER_PAGE' ) )
         <div class="container">
             <div class="row">
               <?php 
-                              if( !isset( $config['this_is_order_page'] ) ){  ?>
+                  if( !isset( $config['this_is_order_page'] ) ){  ?>
                 <aside id="column" class="col-lg-3 sidebar d-none d-lg-block">
                     <?php include 'tpl/_main_menu.php'; ?>
                 </aside>
