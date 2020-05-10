@@ -43,7 +43,7 @@
     display: flex;
 
     ul {
-        background-color: $green;
+        @extend .background-main;
         list-style: none;
         display: flex;
         justify-content: flex-start;
@@ -59,8 +59,16 @@
                 font-weight: bold;
                 color: white;
                 text-decoration: none;
+                @include transitions;
+
+                &:hover {
+                    background-color: transparentize(white, 0.85);
+                }
             }
 
+            &.selected a {
+                background-color: transparentize(white, 0.85);
+            }
         }
     }
 
@@ -68,14 +76,14 @@
         position: absolute;
         top: 100%;
         z-index: 10;
-        background-color: $green;
+        @extend .background-main;
         min-width: 100%;
         max-width: 160px;
     }
 }
 
 .close-mobile-menu {
-    @include closer(20px, $green, 10px);
+    @include closer(20px, grey, 10px);
     @include square(20px);
     border: none;
     appearance: none;

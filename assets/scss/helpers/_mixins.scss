@@ -98,7 +98,7 @@
     transition: $transition_property $transition_duration $transition_timing $transition_delay;
 }
 
-@mixin closer( $size, $color: $deepBlue, $padding: 30px ) {
+@mixin closer( $size, $color: black, $padding: 30px ) {
     position: absolute;
     top: $padding; right: $padding;
     &::before, &::after {

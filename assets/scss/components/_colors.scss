@@ -1,5 +1,32 @@
 .color {
 
+    &-main {
+        color: var(--main-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            color: black;
+        }
+    }
+
+    &-secondary {
+        color: var(--secondary-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            color: grey;
+        }
+    }
+
+    &-minor {
+        color: var(--minor-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            color: red;
+        }
+    }
+
     &-white {
         color: white;
     }
@@ -8,53 +35,81 @@
         color: black;
     }
 
-
-    &-pink {
-        color: $pink;
+    &-light-grey {
+        color: $light-grey;
     }
 
-    &-blue {
-        color: $blue;
-    }
-
-    &-green {
-
-        color: $green;
-    }
-
-    &-violet {
-        color: $violet;
-    }
 }
 
 .background {
+
+    &-main {
+        background-color: var(--main-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            background-color: black;
+        }
+    }
+
+    &-secondary {
+        background-color: var(--secondary-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            background-color: grey;
+        }
+    }
+
+    &-minor {
+        background-color: var(--minor-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            background-color: red;
+        }
+    }
 
     &-white {
         background-color: white;
     }
 
-    &-pink {
-        background-color: $pink;
+    &-black {
+        background-color: black;
     }
 
-    &-blue {
-        background-color: $blue;
-    }
-
-    &-orange {
-        background-color: $orange;
-    }
-
-    &-green {
-        background-color: $green;
-    }
 
     &-light-grey {
         background-color: $light-grey;
     }
 
-    &-violet {
-        background-color: $violet;
+}
+
+.brcolor {
+    &-main {
+        border-color: var(--main-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            border-color: black;
+        }
     }
 
+    &-secondary {
+        border-color: var(--secondary-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            border-color: gray;
+        }
+    }
+
+    &-minor {
+        border-color: var(--minor-color);
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            border-color: red;
+        }
+    }
 }

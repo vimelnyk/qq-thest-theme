@@ -12,6 +12,7 @@ if( !defined( 'CUSTOMER_PAGE' ) )
     <title><?php echo $sTitle.$config['title']; ?></title>
     <meta name="Description" content="<?php echo $sDescription; ?>" />
 
+    <link rel="stylesheet" href="<?php echo $config['dir_skin']; ?>colors.css" />
     <link rel="stylesheet" href="<?php echo $config['dir_skin']; ?>assets/prod/main.min.css" />
     <link rel="stylesheet" href="<?php echo $config['dir_skin'].$config['style']; ?>" />
 
@@ -48,7 +49,7 @@ if( !defined( 'CUSTOMER_PAGE' ) )
         <div class="header-mobile__head">
             <?php include 'tpl/_phones_list.php';?>
         </div>
-        <div class="header-mobile__main background-green">
+        <div class="header-mobile__main background-main">
           <button id="openMobileMenu" type="button" class="open-mobile-menu">
             <span></span>
             <span></span>
@@ -97,7 +98,7 @@ if( !defined( 'CUSTOMER_PAGE' ) )
                 </div>
             </div>
 
-            <div id="head3" class="header-desktop__nav">
+            <div id="head3" class="header-desktop__nav background-main">
                 <div class="container navigation">
                     <?php include 'tpl/_main_menu.php';?>
                 </div>

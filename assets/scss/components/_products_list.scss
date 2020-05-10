@@ -48,7 +48,14 @@
     border-bottom: 1px solid $light-grey;
 
     .product-list-price {
+
         flex: 1;
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            flex: 1 0 auto;
+        }
+
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -62,7 +69,7 @@
             }
 
             strong {
-                color: $green;
+                @extend .color-main;
                 padding-right: 2px;
                 font-size: 1.1rem;
             }
@@ -119,7 +126,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $green;
+        @extend .background-main;
         color: white;
         padding: 1em;
         font-weight: bold;
@@ -128,7 +135,7 @@
 
         &:hover {
             transform: scale(1.01, 1.01);
-            background-color: transparentize($green, 0.1);
+            opacity: 0.9;
         }
     }
 }
@@ -166,12 +173,12 @@
     }
 }
 
-.sort + .pages{
+.sort+.pages {
     display: none;
 }
 
 .pages {
-    .viewAll{
-        padding-right:0.5em;
+    .viewAll {
+        padding-right: 0.5em;
     }
 }

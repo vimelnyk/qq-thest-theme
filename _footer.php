@@ -11,7 +11,7 @@ if( !defined( 'CUSTOMER_PAGE' ) )
        <!--.row -->
 
   <footer id="foot" class="footer"><?php // footer starts here ?>
-  <div class="footer__navigation background-green">      
+  <div class="footer__navigation background-main">      
     <div class="container">
       <div class="row">
      <?php echo $oPage->throwMenu( 2, $iContent, 0 ); // content of top menu second ?>

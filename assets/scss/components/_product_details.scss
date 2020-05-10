@@ -8,7 +8,7 @@
 #product h1 {
     padding: 5px 0 5px;
     background: inherit;
-    color: $green;
+    @extend .color-main;
     font-size: 2.25em;
     font-weight: normal;
 }
@@ -29,7 +29,7 @@
 
 #product div.breadcrumb a:hover {
     background-color: inherit;
-    color: $green;
+    @extend .color-main;
 }
 
 #product div.breadcrumb em {
@@ -82,7 +82,7 @@
         }
 
         strong {
-            color: $green;
+            @extend .color-main;
             padding-right: 2px;
             font-size: 1.1rem;
         }
@@ -103,7 +103,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: $green;
+            @extend .background-main;
             color: white;
             padding: 1em;
             font-weight: bold;
@@ -112,7 +112,7 @@
 
             &:hover {
                 transform: scale(1.01, 1.01);
-                background-color: transparentize($green, 0.1);
+                background-color: transparentize(white, 0.9);
             }
 
         }
