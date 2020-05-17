@@ -39,10 +39,7 @@
 
 
 #product div.content {
-    clear: left;
     padding: 10px 0 10px;
-    font-size: 1.083em;
-    line-height: 1.5em;
 }
 
 #product div.content ul,
@@ -105,14 +102,16 @@
             align-items: center;
             @extend .background-main;
             color: white;
-            padding: 1em;
+            padding: 1rem;
             font-weight: bold;
             text-decoration: none;
             @include transitions(all, 0.3s, ease, 0s);
+            font-size: 1rem;
+            width: 100%;
 
             &:hover {
                 transform: scale(1.01, 1.01);
-                background-color: transparentize(white, 0.9);
+                opacity: 0.9;
             }
 
         }
@@ -120,60 +119,112 @@
 }
 
 
-/* IMAGES STYLES */
-#content .imagesList {
-    list-style: none;
-}
 
-#content .imagesList li {
-    margin: 0 0 15px 0;
-    text-align: center;
-}
+.product-main-info {
+    display: flex;
+    justify-content: space-between;
 
-#content .imagesList li div {
-    text-align: center;
-}
+    @include respondTo(screensmmax) {
+        flex-direction: column;
+    }
+
+    .imagePreview {
+        width: 320px;
+        margin-right: 10px;
+
+        #defaultDescription {
+            font-style: italic;
+            font-size: 0.7rem;
+            text-align: center;
+            padding-bottom: 3px;
+        }
+
+        @include respondTo(screensmmax) {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        a {
+            display: inline-block;
+            width: 100%;
+
+            img {
+                min-width: 100%;
+                width: 100%
+            }
+        }
+
+    }
 
 
 
 
-#imagesList1 {
-    float: left;
-    margin: 9px 20px 0 0;
-}
+    #box {
+        align-self: flex-start;
+        flex: 1;
+        box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .1);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-#imagesList2 {
-    clear: right;
-    float: right;
-    margin: 8px 0 0 15px;
-}
-
-#content .imagePreview div {
-    margin: 5px 0 10px;
-    text-align: center;
-}
-
-#imagesListPreview {
-    float: left;
-    margin: 9px 20px 0 0;
-
-    @include respondTo(screenmdmax) {
-        margin-right: 0;
+        @include respondTo(screensmmax) {
+            width: 100%;
+        }
     }
 }
 
-* html #imagesListPreview {
-    margin-top: -5px;
-}
+.imagesList {
+    width: 100px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    justify-content: flex-start;
+    list-style: none;
 
-#content .imagesList#imagesListPreview li {
-    margin-bottom: 3px;
-}
+    &#imagesList2 {
+        width: 160px;
+        float: right;
+        margin: 8px 0 0 15px;
+    }
 
-#content .imagesList#imagesListPreview li img {
-    border-width: 2px;
-}
+    div {
+        font-style: italic;
+        font-size: 0.7rem;
+        text-align: center;
+        padding-bottom: 3px;
+    }
 
-#content .imagesList#imagesListPreview li img:hover {
-    border-width: 2px;
+
+
+    @include respondTo(screensmmax) {
+        width: 100%;
+
+        
+        margin-right: 0;
+        flex-direction: row;
+        &#imagesList2 {
+            flex-direction: column;
+        }
+    }
+
+
+
+    li {
+        margin-bottom: 3px;
+
+        @include respondTo(screensmmax) {
+            margin-left: 3px;
+        }
+
+        a {
+            display: block;
+
+            img {
+                min-width: 100%;
+                width: 100%
+            }
+        }
+    }
 }
